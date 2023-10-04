@@ -1,0 +1,604 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url(../images/main_haikei.jpg);
+    background-repeat:no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-color: #F5ECD6;
+}
+#header{
+    width: 100%;
+    background-color: #fff;
+    height: 70px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+}
+.header_main{
+    /* border: 1px tomato solid; */
+    display: flex;
+}
+.header_main ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    width: 85%;
+    gap: 100px;
+    margin-top: 10px;
+
+    /* margin: auto 0; */
+    /* border: 1px solid tomato; */
+}
+.main{
+    background: rgba(255, 255, 255, 0.7);
+    width: auto;
+    height: 280pt;
+    padding: 130pt;
+}
+.main_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.main_wrap h1{
+    font-size: 55px;
+    font-family: ヒラギノ角ゴシック,sans-serif;
+}
+.main_lead{
+    font-size: 23px;
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    color: #fff;
+    width: 8em;
+    padding: 10px;
+    background-color: #000;
+}
+.main_next{
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: ヒラギノ角ゴシック,sans-serif; 
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/
+	display:inline-block;
+    padding: 10px 30px;
+	color:#333;
+	/* border:1px solid tomato; */
+    text-decoration: none;
+    outline: none;
+    /*はみ出す背景色を隠す*/
+    overflow: hidden;
+    justify-content: flex-end;
+}
+/*hoverした際のボタンの形状*/
+.main_next:hover {
+	color:#fff;
+	border-color: transparent;
+    /*色の変化を遅らせる*/
+	transition-delay: .6s;
+}
+/*線の設定*/
+.main_next span{
+    display: block;
+    z-index: 2;
+    position: relative;
+}
+
+/*== 線から塗に変化（左から右） */
+
+/*線の設定*/
+.main_next span::before,
+.main_next span::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    width:0;
+    height:1px;
+    /*線の形状*/
+    background: #333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+/*左上線*/
+.main_next span::before {
+    left:0;
+    top: -10px;;
+}
+/*左下線*/
+.main_next span::after {
+    left:0;
+    bottom: -10px;;
+}
+/*hoverをすると線が伸びる*/
+.main_next:hover span::before,
+.main_next:hover span::after {
+    width: 100%;
+}
+/*背景の設定*/
+.main_next::before{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+	position: absolute;
+	left: 0;
+    bottom:0;
+	z-index: 0;
+    /*背景の形状*/
+	height: 100%;
+	width: 0;
+	background:#333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+/*hoverをすると背景が伸びる*/
+.main_next:hover::before{
+	width: 100%;
+    /*0.4秒遅れてアニメーション*/
+	transition-delay: .4s;
+}
+.main_text span{
+    border-bottom: 1px solid #000;
+}
+.main_next{
+    text-align: right;
+}
+
+
+#content{
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.food{
+    /* display: flex; */
+    position: relative;
+    /* border: 1px solid tomato; */
+}
+.food_wrap h2{
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    font-size: 60px;
+}
+.food_wrap h3{
+    /* border: 1px solid tomato; */
+    position: absolute;
+    font-size: 30px;
+    margin-left: 150px;
+    margin-top: 200px;
+}
+.food_img{
+    /* border: 1px solid tomato; */
+    margin-left: 1000px;
+    margin-top: 200px;
+    margin-right: 30px;
+}
+
+.food_img img{
+    /* width: 100%; */
+    border-radius: 10px;
+}
+.food_text{
+    position: absolute;
+    margin-top: 350px;
+    margin-left: 150px;
+}
+.food_next{
+    /* border: 1px #333 solid; */
+    position: absolute;
+    margin-top: 500px;
+    margin-left: 350px;
+    font-size: 20px;
+    font-family: ヒラギノ角ゴシック,sans-serif; 
+    border-radius: 10px;
+}
+/* ボタン共通設定 */
+.food_next {
+    /*線の基点とするためrelativeを指定*/
+	/* position: relative; */
+    /*ボタンの形状*/
+	display:inline-block;
+    padding: 10px 30px;
+	color:#333;
+	/* border:1px solid #ccc; */
+    text-decoration: none;
+    outline: none;
+    /*はみ出す背景色を隠す*/
+    overflow: hidden;
+}
+/*hoverした際のボタンの形状*/
+.food_next:hover {
+	color:#fff;
+	border-color: transparent;
+    /*色の変化を遅らせる*/
+	transition-delay: .6s;
+}
+/*線の設定*/
+.food_next span{
+    display: block;
+    z-index: 2;
+}
+/*== 線から塗に変化（左から右） */
+
+/*線の設定*/
+.food_next span::before,
+.food_next span::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    width:0;
+    height:1px;
+    /*線の形状*/
+    background: #333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+/*左上線*/
+.food_next span::before {
+    left:0;
+    top:0;
+}
+/*左下線*/
+.food_next span::after {
+    left:0;
+    bottom:0;
+}
+/*hoverをすると線が伸びる*/
+.food_next:hover span::before,
+.food_next:hover span::after {
+    width: 100%;
+}
+/*背景の設定*/
+.food_next::before{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+	position: absolute;
+	left: 0;
+    bottom:0;
+	z-index: -1;
+    /*背景の形状*/
+	height: 100%;
+	width: 0;
+	background:#333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+/*hoverをすると背景が伸びる*/
+.food_next:hover::before{
+	width: 100%;
+    /*0.4秒遅れてアニメーション*/
+	transition-delay: .4s;
+}
+
+
+.sweets{
+    /* display: flex; */
+    position: relative;
+    /* border: 1px solid tomato; */
+}
+.sweets_wrap h2{
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    font-size: 60px;
+}
+.sweets_wrap h3{
+    /* border: 1px solid tomato; */
+    position: absolute;
+    font-size: 30px;
+    margin-left: 150px;
+    margin-top: 5px;
+}
+.sweets_img{
+    /* border: 1px solid tomato; */
+    margin-left: 1000px;
+    margin-top: 350px;
+    margin-right: 30px;
+}
+.sweets_img img{
+    /* width: 100%; */
+    border-radius: 10px;
+}
+.sweets_text{
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 150px;
+}
+
+.sweets_next{
+    position: absolute;
+    border-radius: 10px;
+    margin-top: 280px;
+    margin-left: 350px;
+    font-size: 20px;
+    font-family: ヒラギノ角ゴシック,sans-serif; 
+}
+/* ボタン共通設定 */
+.sweets_next{
+    /*線の基点とするためrelativeを指定*/
+	/* position: relative; */
+    /*ボタンの形状*/
+	display:inline-block;
+    padding: 10px 30px;
+	color:#333;
+	/* border:1px solid #ccc; */
+    text-decoration: none;
+    outline: none;
+    /*はみ出す背景色を隠す*/
+    overflow: hidden;
+}
+/*hoverした際のボタンの形状*/
+.sweets_next:hover {
+	color:#fff;
+	border-color: transparent;
+    /*色の変化を遅らせる*/
+	transition-delay: .6s;
+}
+/*線の設定*/
+.sweets_next span{
+    display: block;
+    z-index: 2;
+}
+/*== 線から塗に変化（左から右） */
+
+/*線の設定*/
+.sweets_next span::before,
+.sweets_next span::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    width:0;
+    height:1px;
+    /*線の形状*/
+    background: #333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+/*左上線*/
+.sweets_next span::before {
+    left:0;
+    top:0;
+}
+/*左下線*/
+.sweets_next span::after {
+    left:0;
+    bottom:0;
+}
+/*hoverをすると線が伸びる*/
+.sweets_next:hover span::before,
+.sweets_next:hover span::after {
+    width: 100%;
+}
+/*背景の設定*/
+.sweets_next::before{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+	position: absolute;
+	left: 0;
+    bottom:0;
+	z-index: -1;
+    /*背景の形状*/
+	height: 100%;
+	width: 0;
+	background:#333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+/*hoverをすると背景が伸びる*/
+.sweets_next:hover::before{
+	width: 100%;
+    /*0.4秒遅れてアニメーション*/
+	transition-delay: .4s;
+}
+
+
+.shop{
+    /* border: 1px solid tomato; */
+    padding: 30px;
+}
+.shop h2{
+    text-align: center;
+    font-size: 30px;
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    padding-top: 300px;
+    padding-bottom: 50px;
+}
+.shop p{
+    font-size: 20px;
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    padding: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+
+.inquiry{
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    /* background-color: #000; */
+    /* color: #fff; */
+    /* padding:  1em 3em; */
+    margin-top: 300px;
+    margin-bottom: 200px;
+}
+/* ボタン共通設定 */
+.inquiry{
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/
+	display:inline-block;
+    padding: 10px 30px;
+	color: #333;
+	/* border:1px solid #ccc; */
+    outline: none;
+    /*はみ出す背景色を隠す*/
+    overflow: hidden;
+}
+.inquiry a{
+    text-decoration: none;
+    color:inherit;
+}
+/*hoverした際のボタンの形状*/
+.inquiry:hover {
+	color: #fff;
+	border-color: transparent;
+    /*色の変化を遅らせる*/
+	transition-delay: .6s;
+}
+/*線の設定*/
+.inquiry a{
+    display: block;
+    z-index: 2;
+}
+/*== 線から塗に変化（左から右） */
+
+/*線の設定*/
+.inquiry a::before,
+.inquiry a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    width:0;
+    height:1px;
+    /*線の形状*/
+    background: #333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+.inquiry:visited{
+    color: #333;
+}
+/*左上線*/
+.inquiry a::before {
+    left:0;
+    top:0;
+}
+/*左下線*/
+.inquiry a::after {
+    left:0;
+    bottom:0;
+}
+/*hoverをすると線が伸びる*/
+.inquiry:hover a::before,
+.inquiry:hover a::after {
+    width: 100%;
+}
+/*背景の設定*/
+.inquiry::before{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+	position: absolute;
+	left: 0;
+    bottom:0;
+	z-index: -1;
+    /*背景の形状*/
+	height: 100%;
+	width: 0;
+	background:#333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+/*hoverをすると背景が伸びる*/
+.inquiry:hover::before{
+	width: 100%;
+    /*0.4秒遅れてアニメーション*/
+	transition-delay: .4s;
+}
+
+#footer{
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    /* border: 1px solid tomato; */
+}
+.footer{
+    width: 100%;
+    height: 30px;
+}
+.footer_dot{
+    background-image: url(../images/footer.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid tomato; */
+}
+.footer_box{
+    border-top: 3px solid green;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    padding: 10px 0 30px 0;
+    display: flex;
+    justify-content: center;
+}
+small{
+    display: flex;
+    justify-content: center;
+    color: #000;
+}
+
+iframe{
+    border-radius: 10px;
+}
+.btntransform,.btntransform2,.btntransform3{
+    /*丸の基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/	
+    display: inline-block;
+	padding:0 0 0 15px;
+	line-height: 50px;
+    color: #333;
+    text-decoration: none;
+    outline: none;
+    /* border: 1px solid tomato; */
+}
+/* 丸が動く */
+.btntransform::before,.btntransform2::before,.btntransform3::before{
+	content:'';
+    /*絶対配置で丸の位置を決める*/
+	position:absolute;
+	left:0;
+	z-index: -1;
+    /*丸の形状*/
+	width:50px;
+	height:50px;
+	background:#ccc;
+	border-radius:25px;
+    /*アニメーションの指定*/
+    transition:.3s ease-out;
+}
+
+/*hoverした際の形状*/
+.btntransform:hover::before{
+	width:100px;
+}
+
+.btntransform2:hover::before{
+    width: 170px;
+}
+
+.btntransform3:hover::before{
+    width: 145px;
+}
+/* 矢印の形状 */
+.btntransform::after,.btntransform2::after,.btntransform3::after{
+	position: absolute;
+    content: '';
+    top: 1.3em;
+    right: -15px;
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    transform: rotate(45deg);
+    /* border: 1px solid tomato; */
+}

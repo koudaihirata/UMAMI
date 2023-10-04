@@ -1,0 +1,74 @@
+body{
+    background-color: #F5ECD6;
+}
+.beginner_wrap{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 140px;
+}
+.beginner_first_view{
+    /* width: 100%; */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 30px;
+}
+.beginner_first_view h1{
+    margin-top: 140px;
+    /* text-align: center; */
+}
+.beginner_first_view img{
+    height: 500px;
+}
+.beginner_first_view p{
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    font-size: 24px;
+}
+.beginner_text{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 48px;
+    text-align: center;
+}
+.beginner_text h3{
+    font-family: ヒラギノ角ゴシック,sans-serif;
+}
+.beginner_text p{
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    font-size: 24px;
+}
+span{
+    font-family: ヒラギノ角ゴシック,sans-serif;
+    font-size: 14px;
+    color: #575757;
+}
+.beginner_bigbox{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 100px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+.beginner_bigbox h2{
+    font-size: 42px;
+    color: #770000;
+    text-align: center;
+}
+.beginner_box{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+.beginner_smallbox{
+    border-bottom: #000 solid 1px;
+    padding-left: 3em;
+    padding-right: 4em;
+}
+.beginner_smallbox h3{
+    font-size: 25px;
+}
